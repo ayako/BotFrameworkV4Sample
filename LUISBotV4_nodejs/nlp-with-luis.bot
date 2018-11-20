@@ -1,0 +1,24 @@
+{
+    "name": "nlp-with-luis",
+    "description": "",
+    "services": [
+        {
+            "type": "endpoint",
+            "appId": "",
+            "appPassword": "",
+            "endpoint": "http://localhost:3978/api/messages",
+            "id": "1",
+            "name": "development"
+        },
+        {
+            "type": "luis",
+            "authoringKey": "YOUR_LUIS_AUTHORING_KEY",
+            "appId": "YOUR_LUIS_APPID",
+            "name": "LUIS",
+            "endpoint": "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR_LUIS_APPID?subscription-key=YOUR_LUIS_AUTHORING_KEY",
+            "id": "5"
+        }
+    ],
+    "padlock": "",
+    "version": "2.0"
+}
