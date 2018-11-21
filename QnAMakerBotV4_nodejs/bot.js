@@ -28,7 +28,8 @@ class QnAMakerBot {
         // By checking the incoming Activity type, the bot only calls QnA Maker in appropriate cases.
         if (turnContext.activity.type === ActivityTypes.Message) {
             // Perform a call to the QnA Maker service to retrieve matching Question and Answer pairs.
-            const qnaResults = await this.qnaMaker.generateAnswer(turnContext.activity.text);
+            // Get Top 3 answers, and score > 0.5
+            const qnaResults = await this.qnaMaker.generateAnswer(turnContext.activity.text, 3, 0.5);
 
             // If an answer was received from QnA Maker, send the answer back to the user.
             if (qnaResults[0]) {
